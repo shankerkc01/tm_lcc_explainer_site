@@ -26,8 +26,8 @@
             </p>
 
             <figure>
-                <img src="tm_six_deg_width_84_cm_distortion.png" alt="customized utm84 distortion">
-                <figcaption>Fig 2. distortion visualizer</figcaption>
+                <img src="custom_utm84_distortion.png" alt="customized utm84 distortion">
+                <figcaption>Fig 1. Custom UTM84 Projection Distortion Visualize</figcaption>
             </figure>
             
             <p>
@@ -38,24 +38,114 @@
             </p>
 
             <figure>
-                <img src="blockwise_lcc_sf.png" alt="LCC scale factor, not pointwise, its blockwise">
-                <figcaption>Fig 3. blockwise scale factor</figcaption>
+                <img src="mutm84_zone_distortion.png" alt="mutm84 zone distortion">
+                <figcaption>Fig 2. Modified UTM 84deg E longitude as CM & Distortion Visualize</figcaption>
             </figure>
             
             <p>
-                The blockwise scale factor. The block is 0.5deg by 0.5deg. The mentioned scale factor is not actual scale 
+                Modified UTM. 6deg longitudinal width to 3deg longitudinal width. The scale factor at central meridian is 
+                0.9999. The distortion pattern is shown in Fig 2 above. Meditate on it. The intent is to minimize the 
+                distortion compared to UTM zone.
+            </p>
+
+            <figure>
+                <img src="mutm_zone_all_distortion.png" alt="all 3 mutm zone distortion">
+                <figcaption>Fig 3. All 3 MUTM Zone That Covers Entire Nepal Region</figcaption>
+            </figure>
+            
+            <p>
+                Modified UTM. 3 such zone is required to cover entire Nepal. As Modified UTM provides minimal distortion 
+                compared to UTM, why not use 3 separate MUTM zones for survyeing and mapping purpose in Nepal region.
+            </p>
+
+            <figure>
+                <img src="lcc_sms_distortion.png" alt="lcc distortion">
+                <figcaption>Fig 4. LCC (SMS) Distortion Factor Visualize</figcaption>
+            </figure>
+            
+            <p>
+                Conical projection. Lambert Conformal Conical (LCC) projection. The location of standard parallel 
+                is according to Suresh Man Shrestha (SMS) designed /developed parameters. The location of SP 
+                is key to distortion factor and pattern.
+            </p>
+
+            <figure>
+                <img src="lcc_sp_changed_distortion.png" alt="lcc (sp modified) distortion">
+                <figcaption>Fig 4. LCC but Location of SP Changed Distortion Factor Visualize</figcaption>
+            </figure>
+            
+            <p>
+                LCC. The key parameter to distortion and its pattern is the location of SP. What if we change the 
+                SP than SMS location. Would we achieve minimal distortion? inspect Fig 4 above and compare with Fig 4.
+            </p>
+
+            <figure>
+                <img src="upper_lcc_distortion.png" alt="upper lcc distortion">
+                <figcaption>Fig 5. Upper LCC Distortion Factor Visualize</figcaption>
+            </figure>
+            
+            <p>
+                LCC. What if we split in half the north-south extent of Nepal: upper part and lower part. Lets develop 
+                separate LCC for both halves. Upper LCC: now SPs are closer, results better scale factor. Compare it with 
+                single LCC shown in Fig 4.
+            </p>
+
+            <figure>
+                <img src="lower_lcc_distortion.png" alt="lower lcc distortion">
+                <figcaption>Fig 6. Lower LCC Distortion Factor Visualize</figcaption>
+            </figure>
+            
+            <p>
+                LCC. Lower LCC, lcc applied lower half of Nepal. It is exactly similar to upper LCC. Compare it with 
+                single LCC shown in Fig 4.
+            </p>
+
+            <figure>
+                <img src="double_lcc_distortion.png" alt="lower lcc distortion">
+                <figcaption>Fig 6. Double LCC Distortion Factor Visualize</figcaption>
+            </figure>
+            
+            <p>
+                LCC. Both upper and lower LCC put together. There is overlapping (or gap?) region at dividing line, 
+                a parallel that splits north-south extent of Nepal into two-half. In this analysis, the diviing line 
+                is 28degN latitude parallel. Is it better to adopt double LCC compared to single LCC, what do you think?
+            </p>
+
+            <figure>
+                <img src="blockwise_lcc_sf.png" alt="LCC scale factor, not pointwise, its blockwise">
+                <figcaption>Fig 7. Blockwise LCC Scale Factor</figcaption>
+            </figure>
+            
+            <p>
+                The blockwise scale factor. Why? The distortion factor varies at every point. What scale factor will 
+                i apply for length /distance (Line scale factor!!!).
+                If scale factor varies at every point, then what scale factor (a single scale factor) will apply in 
+                survey area of my interset?
+                
+                The block is 0.5deg by 0.5deg. The mentioned scale factor is not actual scale 
                 factor at centroid or central point of each block. But the line scale factor, that line pass through mid 
                 longitude of each block. (equation: K = (k1+k2+4km)/6).
             </p>
 
             <figure>
+                <img src="curved_length_half_deg.png" alt="curved length">
+                <figcaption>Fig 8. Curved Length Over Nepal</figcaption>
+            </figure>
+            
+            <p>
+                Distortion is introduced invariably, if I want my curved length (arc length) computed over reference 
+                ellipsoid and then want equivalent distance in grid plane /paper map. Curved length on WGS84 surface to 
+                equivalent length on MUTM plane or LCC plane, this is what projection formula does at the cost of 
+                distortion. I want minimal distortion and the convenient. Which projection, MUTM or LCC, does solve my 
+                problem?
+            </p>
+
+            <figure>
                 <img src="trinity.png" alt="Sample Image">
-                <figcaption> Figure 1. Trinity</figcaption>
+                <figcaption> Figure n+1: Something amazing that delights your heart is not here.</figcaption>
             </figure>
             <p>
-                This is a basic one-page website. It demonstrates a minimal structure
-                with an image and descriptive paragraph. This setup is sufficient
-                for static deployment using GitHub Pages.
+                Trinity: The creation of Oppenheimer, destructive enough to destory the Earth.
             </p>
         </section>
     </main>
