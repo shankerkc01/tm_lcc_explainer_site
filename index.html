@@ -20,9 +20,16 @@
             </figure>
             
             <p>
-                This is a basic one-page website. It demonstrates a minimal structure
-                with an image and descriptive paragraph. This setup is sufficient
-                for static deployment using GitHub Pages.
+                This webpage collects/documents distortion factor and its pattern focused over Nepal territory.<br>
+                A map projection system/formula/model introduces distortion while converting/transforming curved earth surface (sphere or ellipsoid) 
+                into flat paper (2D rectangular plane).<br>
+                Two major projection system - Transverse Mercator (TM) and Lambert Conformal Conic (LCC) are presented here, specifically focused 
+                to their distortion pattern.<br>
+                TM : cylindrical, conformal, secant. LCC: conical, conformal, secant. <br>
+                Recall your basics of TM and LCC. Recall your experiences and practices of using TM (UTM or MUTM) and LCC while doing your 
+                surveying, mapping, GIS, and geomatics projects. <br>
+                The essay progresses from information on UTM to MUTM to LCC. Specifically focused on distortion factor.<br>
+                The concept of blockwise distortion factor and arc-length (curved distance) are additional items at the end of page.<br>
             </p>
 
             <figure>
@@ -31,10 +38,16 @@
             </figure>
             
             <p>
-                Customized UTM Zone, central meridain at 84deg E longitude. Six degree width.
-                Observe the pattern of distortion factor. Note that six degree width zone with 84deg E longitude 
-                as central meridian doesnt completley cover the entire Nepal region. Note the west part and east part of 
-                Nepal beyond UTM zone shown in above figure.
+                This figure visualizes customized UTM zone with central meridian (CM) at 84deg E longitude (In UTM system, there is no UTM zone 
+                having CM at 84deg E longitude. That is why I said 'customized UTM zone'.<br>
+                UTM Zone: six degree longitudinal width, distortion factor is 0.9996 at central meridian.<br>
+                central meridian (dotted red), UTM zone border (solid red line), and secant line (dotted blue).<br>
+                The latitudinal extent: 25deg N to 30.5deg N latitude.<br>
+                The longitudinal extent: 80deg E to 88.5deg E longitude.<br>
+                The plot has 0.5deg by 0.5deg grids (each square grid has size of half degree by half degree).<br>
+                The national admin boundary is plotted in background for the context/perspective.<br>
+                what are the values at each node (grid node): distortion factor (blue text), distortion error (red text), distortion per kilometer (lightgray text).<br>
+                Note that the west part and east part of the Nepal territory extend beyond this customized UTM zone in the figure.
             </p>
 
             <figure>
@@ -43,9 +56,16 @@
             </figure>
             
             <p>
-                Modified UTM. 6deg longitudinal width to 3deg longitudinal width. The scale factor at central meridian is 
-                0.9999. The distortion pattern is shown in Fig 2 above. Meditate on it. The intent is to minimize the 
-                distortion compared to UTM zone.
+                This figure is of modified UTM (MUTM zone). The 'modified' refers to change from 6 degree longitudinal width to 3 degree width, to 
+                reduce the distortion. The distortion at central meridian is reduced to and constrained at 0.9999.<br>
+                Inspect the distortion pattern, varies in laterally in longitudinal direction. Compare the earlier customized UTM zone and this MUTM 
+                zone in terms of distortion factor. Obviously, less distortion in MUTM approach.<br>
+                In this particular figure, the 3 degree zone with 84 deg E as the CM and distortion pattern is visualized.<br>
+                Your 1 km distance at ground around central meridian region would be less by 10cm in your map.<br>
+                Your 1 km distance at ground around border of the zone (1.5 degree away at either side) would be excess by around 18cm in your map.<br>
+                Because of its minimal distortion and better than UTM, MUTM has been adopted /applied in large scale mapping (e.g. 1:500, 1:1250, 1:2500, 1:10000). Cadastral mapping need to be done at large scale, this is the reason why MUTM projection has been adopted.<br>
+                The problem: because MUTM is just 3 degree width, it doesn't cover the entire east-west extent of Nepal. Thus, we introduced 3 
+                different MUTM zones (continue to next/upcoming figure below).
             </p>
 
             <figure>
@@ -56,6 +76,18 @@
             <p>
                 Modified UTM. 3 such zone is required to cover entire Nepal. As Modified UTM provides minimal distortion 
                 compared to UTM, why not use 3 separate MUTM zones for survyeing and mapping purpose in Nepal region.
+                3 MUTM zones put together, covers the extent of Nepal, lets call each MUTM81 (MUTM zone having 81 deg E longitude as central meridian), MUTM84, and MUTM87. MUTM81 covers western part, MUTM84 covers central part, and MUTM87 covers eastern part of Nepal.<br>
+                Then you naturally ask /think: if my surveying and mapping area is Jhapa district, i would use MUTM87 projection, but what if 
+                my project area lies at the boundary of these zones, e.g. at the boundaries of MUTM84 and MUTM87? For example, Sindhuli and Kavrepalanchok district falls at both MUTM84 and MUTM87 zone.<br>
+                Also, you naturally ask/think: if my project area covers entire province (provincial level), which might extend /spreads to coverage of two neighboring MUTM zones, then?<br>
+                The advantage: MUTM has less distortion. Suited to large scale mapping. Relatively smaller geographic coverage.
+                The disadvantage: one MUTM zone doesnt't cover area that extends beyond 3 degree width in longitude. That is why mutliple MUTM zones are introduced in a first place. The project area that lies at boundary of MUTM zones or the project area that span beyond the width of single MUTM zone e.g. entire province or entire Nepal, the diffculty arise in such scenario.<br>
+                So, which projection system will I use when I am doing province-wide GIS analysis, nation-wide GIS analysis? lets say nationwide landuse product, nationwide vegetation coverage or forestry, nationwide topograpic features overlay with other thematic information?<br>
+                These provice-wide / nation-wide examples, just mentioned here, are small scale mapping. The small scale (e.g. 1:25,000 or 1:100,000) absorbs the distortion error (the amount of distortion). Now the distortion cease to be key /critical factor at these kind of GIS analysis or scenario.<br>. In these cases, you again move from MUTM to UTM projection system (again UTM is just 6 degree width, UTM is limited also) or any other projection system that solves/sutis/fits your purpose/problem.<br>
+                By now, we realized, we have been using UTM, MUTM and multiple MUTMs together for our surveying/mapping, GIS, and geomatics purposes and managing. Maybe we need third kind of projection / a next or newer class of projection system (continue to next/upcoming figure below for newer solution).<br>
+                
+                
+                
             </p>
 
             <figure>

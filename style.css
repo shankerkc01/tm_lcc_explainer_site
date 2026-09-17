@@ -54,3 +54,8 @@ footer {
     background: #f4f4f4;
     padding: 1rem;
 }
+
+.content p {
+    font-family: "Times New Roman", Times, serif;
+    text-align: left;
+}
