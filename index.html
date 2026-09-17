@@ -85,9 +85,6 @@
                 So, which projection system will I use when I am doing province-wide GIS analysis, nation-wide GIS analysis? lets say nationwide landuse product, nationwide vegetation coverage or forestry, nationwide topograpic features overlay with other thematic information?<br>
                 These provice-wide / nation-wide examples, just mentioned here, are small scale mapping. The small scale (e.g. 1:25,000 or 1:100,000) absorbs the distortion error (the amount of distortion). Now the distortion cease to be key /critical factor at these kind of GIS analysis or scenario.<br>. In these cases, you again move from MUTM to UTM projection system (again UTM is just 6 degree width, UTM is limited also) or any other projection system that solves/sutis/fits your purpose/problem.<br>
                 By now, we realized, we have been using UTM, MUTM and multiple MUTMs together for our surveying/mapping, GIS, and geomatics purposes and managing. Maybe we need third kind of projection / a next or newer class of projection system (continue to next/upcoming figure below for newer solution).<br>
-                
-                
-                
             </p>
 
             <figure>
@@ -99,6 +96,19 @@
                 Conical projection. Lambert Conformal Conical (LCC) projection. The location of standard parallel 
                 is according to Suresh Man Shrestha (SMS) designed /developed parameters. The location of SP 
                 is key to distortion factor and pattern.
+                LCC is conformal, conical, and secant project.
+                This cone touches or intersects the earth (spheroid or ellipsoid) along two parallels (parallels of latitude). Such parallel is standard parallel. These intersecting parallel are also secant lines. There is no distortion introduced at standard parallels (the scale factor is unity here).<br>
+                Double standard parallel (2sp LCC): this LCC which we are introduced here is called double standard parallel LCC. If a cone is maded to touch at only single paralle of latitude, then that is called single standard parallel (1sp LCC). We explore here 2sp LCC.<br>
+                The location of standard parallel is the key decision, that further or later governs the distortion amount and distortion pattern.<br>
+                Inspect the above figure. Border parallels (solid red line) are southern-most and northern-most bound. Standard parallels (dottend blue line). Notice lower sp is at 27deg N latitude and upper sp is at 29.75deg N latitude.<br>
+                Now, we can inspect the distortion and distortion pattern. The blue text is the distortion value, red text is distortion error (scale error), and lightgray text is distortion introduced per km. One clear pattern: no distortion introduced at standard parallel, the distortion goes increasing if you move inwards from standard parallel, keep increasing, reaches maximum at certain latitude
+                One clear pattern: take lower standard parallel, there is no distortion at sp (scale factor of unity), if you move upwards (inwards), the distortion keeps increasing, reaches to maximum at some point (around mid of both sp), then the distortion keeps decreasing and reaches to no distortion (scale factor of unity) at upper sp.<br>
+                Another pattern: take both sp and move inwards from both sp, you find distortion keeps increasing and reaches the maximum at certain point.<br>
+                Take any one of the standard parallel and move outwards, you find distortion keeps increasing and later you will find dramatic increment in distortion compared to inward directions from both standard parallel.<br>
+                These two standard parallels are put in optimal location resulting the minimal distortion we can achieve. But before concluding and settling for these two standard parallel positions, lets see few variations in LCC, different than this one (continue below for other variations /experiment of LCC).<br>
+                
+                
+                
             </p>
 
             <figure>
