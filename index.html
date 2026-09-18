@@ -105,36 +105,42 @@
                 One clear pattern: take lower standard parallel, there is no distortion at sp (scale factor of unity), if you move upwards (inwards), the distortion keeps increasing, reaches to maximum at some point (around mid of both sp), then the distortion keeps decreasing and reaches to no distortion (scale factor of unity) at upper sp.<br>
                 Another pattern: take both sp and move inwards from both sp, you find distortion keeps increasing and reaches the maximum at certain point.<br>
                 Take any one of the standard parallel and move outwards, you find distortion keeps increasing and later you will find dramatic increment in distortion compared to inward directions from both standard parallel.<br>
-                These two standard parallels are put in optimal location resulting the minimal distortion we can achieve. But before concluding and settling for these two standard parallel positions, lets see few variations in LCC, different than this one (continue below for other variations /experiment of LCC).<br>
-                
-                
-                
+                These two standard parallels are put in optimal location resulting the minimal distortion we can achieve. But before concluding and settling for these two standard parallel positions, lets see few variations in LCC, different than this one (continue below for other variations /experiment of LCC).<br>                
             </p>
 
             <figure>
-                <img src="lcc_sp_changed_distortion.png" alt="lcc (sp modified) distortion">
-                <figcaption>Fig 4. LCC but Location of SP Changed Distortion Factor Visualize</figcaption>
+                <img src="lcc_sp_changed_distortion_b.png" alt="lcc (sp modified) distortion">
+                <figcaption>Fig 5. LCC but Location of SP Changed Distortion Factor Visualize</figcaption>
             </figure>
             
             <p>
-                LCC. The key parameter to distortion and its pattern is the location of SP. What if we change the 
-                SP than SMS location. Would we achieve minimal distortion? inspect Fig 4 above and compare with Fig 4.
+                For LCC system, the key parameter to distortion and its pattern is the location of SP. What if we change the 
+                SP than earlier (Fig 4) settings. For convenience, because the LCC parameters (location of SP, origin of latitude and 
+                longitude, false easting and northing) used in Fig 4, were proposed by Suresh Man Shrestha (SMS), lets call it SMS LCC. Whenever you see SMS LCC, this means Fig 4 parameters. Till now, we have only focused / discussed the SP and its location. We have not discussed other LCC parameters yet such as origin of latitude and longitude and false easting and northing.<br>
+                Lets change SP to 27.5deg N and 29.5deg N latitude. Would we achieve minimal distortion? inspect Fig 5 above and compare with Fig 4.
+                We squeezed the inner space between SPs in this case compared to SMS LCC. The maximum distortion inside SPs is better /less than compared to SMS LCC. We achieved minimal distortion inside. However, notice the dramatic increase in distortion factor while moving outward from borth SPs. At 26deg N latitude, the distortion introduced is around 80cm in 1 km and at 30.5deg N latitude, the distortion introduced is around 45cm in 1 km.<br>
+                In case of SMS LCC, the distortion introduced is 56cm and 40cm in 1km at 26deg N and 30.5deg N latitude.<br>
+                Thus, you might have evaluated /analyzed that SMS LCC provides better distortion pattern than this one in overall, taking entire 
+                extent of Nepal territory.<br>
+                This case clearly shows that SMS LCC performs best/optimal than any other variations of LCC. You can change the location of SP anywhere you like and analyze the distortion pattern as an experiment. This is how you learn and absorb the ideas.<br>
+                
             </p>
 
             <figure>
                 <img src="upper_lcc_distortion.png" alt="upper lcc distortion">
-                <figcaption>Fig 5. Upper LCC Distortion Factor Visualize</figcaption>
+                <figcaption>Fig 6. Upper LCC Distortion Factor Visualize</figcaption>
             </figure>
             
             <p>
-                LCC. What if we split in half the north-south extent of Nepal: upper part and lower part. Lets develop 
-                separate LCC for both halves. Upper LCC: now SPs are closer, results better scale factor. Compare it with 
-                single LCC shown in Fig 4.
+                Have you arrived here by reading this article thoroughly. Wow, you have got the endurance.<br>
+                Lets consider another scenario: What if we split in half the north-south extent of Nepal: upper part and lower part. As in multiple MUTM zones, lets try to apply multiple LCC. Lets develop separate LCC for both halves, namely Upper LCC and Lower LCC.<br>
+                Fig 6 above shows the Upper LCC (Fig 7 below shows the Lower LCC). Now SPs are closer, results better scale factor. Compare it with 
+                single LCC shown in Fig 4. Only limitation of Upper LCC is, it is upper only, do not cover lower half.<br>
             </p>
 
             <figure>
                 <img src="lower_lcc_distortion.png" alt="lower lcc distortion">
-                <figcaption>Fig 6. Lower LCC Distortion Factor Visualize</figcaption>
+                <figcaption>Fig 7. Lower LCC Distortion Factor Visualize</figcaption>
             </figure>
             
             <p>
@@ -151,6 +157,9 @@
                 LCC. Both upper and lower LCC put together. There is overlapping (or gap?) region at dividing line, 
                 a parallel that splits north-south extent of Nepal into two-half. In this analysis, the diviing line 
                 is 28degN latitude parallel. Is it better to adopt double LCC compared to single LCC, what do you think?
+
+                Lets put both Upper and Lower LCC together. You get Fig 6.<br>
+                The dividing line (dividing parallel) or common line (common parallel) that splits north-south extent into two-halves is 28deg N latitude. There is overlapping portion at this dividing line or is it gap? Lets call it double LCC system (note that 2SP LCC or double SP LCC is different than double LCC system: Upper & Lower LCC; Upper LCC is is 2SP and so is Lower LCC).<br>
             </p>
 
             <figure>
@@ -159,14 +168,22 @@
             </figure>
             
             <p>
-                The blockwise scale factor. Why? The distortion factor varies at every point. What scale factor will 
-                i apply for length /distance (Line scale factor!!!).
-                If scale factor varies at every point, then what scale factor (a single scale factor) will apply in 
-                survey area of my interset?
-                
-                The block is 0.5deg by 0.5deg. The mentioned scale factor is not actual scale 
-                factor at centroid or central point of each block. But the line scale factor, that line pass through mid 
-                longitude of each block. (equation: K = (k1+k2+4km)/6).
+                Having discussed UTM, MUTM and LCC, we knew and we saw that distortion factor varies at every point. The TM distortion factor 
+                varies in lateral direction (longitudinal direction along the parellel) and varies in north-south direction 
+                (latitudinal direction along the meridians or longitude line) for LCC.<br>
+                Thus, it must have occured to your mind:<br>
+                <ul>
+                    If distortion varies at every point, what distortion factor (scale factor) will I apply for my traverese leg or GNSS baseline or (any length/distance)? (Ans: Line scale factor).
+                    If distortion varies, then what distortion factor (a single scale factor) will apply in survey /mapping area of my project?
+                </ul><br>
+            Because distortion varies at every point, it would be wise and managable and makes our lives easy, if we apply single scale factor (either average or central or any approach that gives us single value) for reasonably larger block, within which that single value satisfy our problems. The concept of blockwise scale factor.<br>
+            Fig 7 shows the blockwise scale factor for LCC.<br>
+            
+            The block is 0.5deg by 0.5deg. The mentioned scale factor is not actual scale 
+            factor at centroid or central point of each block. But the line scale factor, that line pass through mid 
+            longitude of each block. (equation: K = (k1+k2+4km)/6).<br>
+            Lets inspect the blockwise scale factor in Fig 7. For blocks that are placed /alignted in lateral direction, the distortion factor /scale factor doesn't change, and that is the nature of LCC. For blocks in north-south direction, blockwise distortion factor changes, but it changes gradually which introduces negligible effect as a change of factor. Even if your project area covers blocks of extreme ends (the northernmost block and southernmost block), the difference in distortion factor is negligible enough.<br>
+            
             </p>
 
             <figure>
